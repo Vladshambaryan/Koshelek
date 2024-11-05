@@ -13,7 +13,6 @@ on:
           - all
           - smoke
           - regression
-          - extended
           
 permissions:
   contents: read
@@ -49,9 +48,9 @@ jobs:
         run: pytest -m regression --alluredir=allure-results 
         continue-on-error: true
         
-      - name: run extended tests
-        if: "github.event.inputs.deployment_target == 'extended'" 
-        run: pytest -m extended --alluredir=allure-results
+      - name: run negative tests
+        if: "github.event.inputs.deployment_target == 'negative'" 
+        run: pytest -m negative --alluredir=allure-results
         continue-on-error: true
 
       - name: Install Java
