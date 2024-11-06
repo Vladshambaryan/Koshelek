@@ -9,6 +9,5 @@
 7. Для связи
 8. https://t.me/Vladimir_30913
 9. skachat30913@gmail.com
-10. WhatsApp +37496240536   
    
    
