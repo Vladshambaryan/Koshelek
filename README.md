@@ -1,6 +1,5 @@
-Koshelek
 В этом репозитории находится фраймеворк на Python + Playwright в котором тестируется поля формы
-регистрации.
+регистрации  https://koshelek.ru/authorization/signup
 1. Для запуска теста в репозитории нажать Action 
 2. На странице Action на левой стороне страницы нажать Python autotests
 3. В правой стороне появится Run workflow нажать, далее нажать зелёную Run workflow
