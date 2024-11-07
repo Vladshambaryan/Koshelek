@@ -17,3 +17,7 @@ password_error_message__loc = 'Пароль должен содержать от
 #  REFERRAL CODE LOCATORS
 referral_code_loc = 'Реферальный код'
 referral_code_message_loc = 'Неверный формат ссылки'
+
+# checkbox
+checkbox_loc = "checkbox"
+next_loc = 'Далее'

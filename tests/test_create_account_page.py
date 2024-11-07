@@ -72,3 +72,13 @@ def test_negative_field_referral_code(create_account_page):
     create_account_page.field_incorrect_referral_code('A1234567$')
     create_account_page.check_referral_code_error_message(error_message_data)
     create_account_page.clear_field_referral_code()
+
+
+@allure.step('Поле "Реферальный код"')
+@pytest.mark.negative
+@pytest.mark.regression
+def test_negative_field(create_account_page):
+    create_account_page.open()
+    create_account_page.create_account()
+    create_account_page.select_checkbox()
+    create_account_page.press_next()

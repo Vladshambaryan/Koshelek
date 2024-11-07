@@ -1,3 +1,5 @@
+from time import sleep
+
 import allure
 from locators import create_account_locators as loc
 from pages.base_page import BasePage
@@ -78,3 +80,15 @@ class CreateAccount(BasePage):
 
     def check_referral_code_error_message(self, text):
         expect(self.page.get_by_text(loc.referral_code_message_loc)).to_have_text(text)
+
+    def select_checkbox(self):
+        check_box = self.page.get_by_role(loc.checkbox_loc)
+        check_box.click()
+
+    def press_next(self):
+        press_next = self.page.get_by_text(loc.next_loc)
+        press_next.click()
+
+
+
+
