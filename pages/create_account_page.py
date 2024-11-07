@@ -6,8 +6,6 @@ from playwright.sync_api import expect
 
 class CreateAccount(BasePage):
 
-    page_url = '/authorization/signup'
-
     def create_account(self):
         create = self.page.locator(loc.create_loc)
         create.click()
