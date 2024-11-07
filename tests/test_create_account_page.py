@@ -70,10 +70,11 @@ def test_negative_field_referral_code(create_account_page):
     create_account_page.clear_field_referral_code()
 
 
-@allure.step('Поле "Не заполненные поля"')
+@allure.step("Не заполненные поля")
 @pytest.mark.negative
 def test_with_empty_fields(create_account_page):
     create_account_page.open()
     create_account_page.create_account()
     create_account_page.select_checkbox()
     create_account_page.press_next()
+    create_account_page.check_with_empty_fields('Поле не заполнено')

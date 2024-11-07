@@ -21,3 +21,4 @@ referral_code_message_loc = 'Неверный формат ссылки'
 # checkbox
 checkbox_loc = "checkbox"
 next_loc = 'Далее'
+empty_fields_loc = 'Поле не заполнено'
