@@ -4,7 +4,6 @@ import allure
 
 @allure.step('Поле "Имя пользователя"')
 @pytest.mark.negative
-@pytest.mark.regression
 def test_negative_field_incorrect_user_name(create_account_page):
     error_message_data = 'Допустимые символы (от 6 до 32): a-z, 0-9, _. Имя должно начинаться с буквы'
     create_account_page.open()
@@ -21,7 +20,6 @@ def test_negative_field_incorrect_user_name(create_account_page):
 
 @allure.step('Поле "Электронная почта"')
 @pytest.mark.negative
-@pytest.mark.regression
 def test_negative_field_incorrect_email(create_account_page):
     error_message_data = 'Формат e-mail: username@test.ru'
     create_account_page.open()
@@ -44,7 +42,6 @@ def test_negative_field_incorrect_email(create_account_page):
 
 @allure.step('Поле "Пароль"')
 @pytest.mark.negative
-@pytest.mark.regression
 def test_negative_field_incorrect_password(create_account_page):
     password_data = ('The password must contain from 8 to 64 characters,'
                      ' including capital letters and numbers')
@@ -61,7 +58,6 @@ def test_negative_field_incorrect_password(create_account_page):
 
 @allure.step('Поле "Реферальный код"')
 @pytest.mark.negative
-@pytest.mark.regression
 def test_negative_field_referral_code(create_account_page):
     error_message_data = 'Неверный формат ссылки'
     create_account_page.open()
@@ -74,10 +70,9 @@ def test_negative_field_referral_code(create_account_page):
     create_account_page.clear_field_referral_code()
 
 
-@allure.step('Поле "Реферальный код"')
+@allure.step('Поле "Не заполненные поля"')
 @pytest.mark.negative
-@pytest.mark.regression
-def test_negative_field(create_account_page):
+def test_with_empty_fields(create_account_page):
     create_account_page.open()
     create_account_page.create_account()
     create_account_page.select_checkbox()
