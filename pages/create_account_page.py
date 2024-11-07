@@ -8,6 +8,10 @@ class CreateAccount(BasePage):
 
     page_url = '/authorization/signup'
 
+    def create_account(self):
+        create = self.page.locator(loc.create_loc)
+        create.click()
+
     def field_incorrect_user_name(self, text):
         field = self.page.get_by_label(loc.field_loc)
         field.press_sequentially(text)
