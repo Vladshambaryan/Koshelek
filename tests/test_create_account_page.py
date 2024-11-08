@@ -7,7 +7,6 @@ import allure
 def test_negative_field_incorrect_user_name(create_account_page):
     error_message_data = 'Допустимые символы (от 6 до 32): a-z, 0-9, _. Имя должно начинаться с буквы'
     create_account_page.open()
-    create_account_page.create_account()
     create_account_page.field_incorrect_user_name('Vlad_')
     create_account_page.check_user_error_message(error_message_data)
     create_account_page.clear_field_user_name()
@@ -23,7 +22,6 @@ def test_negative_field_incorrect_user_name(create_account_page):
 def test_negative_field_incorrect_email(create_account_page):
     error_message_data = 'Формат e-mail: username@test.ru'
     create_account_page.open()
-    create_account_page.create_account()
     create_account_page.field_incorrect_email('email.ru')
     create_account_page.check_email_error_message(error_message_data)
     create_account_page.clear_field_email()
@@ -46,7 +44,6 @@ def test_negative_field_incorrect_password(create_account_page):
     password_data = ('The password must contain from 8 to 64 characters,'
                      ' including capital letters and numbers')
     create_account_page.open()
-    create_account_page.create_account()
     create_account_page.field_incorrect_password('A123456')
     create_account_page.check_password_error_message_min('Пароль должен содержать минимум 8 символов')
     create_account_page.clear_field_password()
@@ -61,7 +58,6 @@ def test_negative_field_incorrect_password(create_account_page):
 def test_negative_field_referral_code(create_account_page):
     error_message_data = 'Неверный формат ссылки'
     create_account_page.open()
-    create_account_page.create_account()
     create_account_page.field_incorrect_referral_code('A12')
     create_account_page.check_referral_code_error_message(error_message_data)
     create_account_page.clear_field_referral_code()
@@ -74,7 +70,6 @@ def test_negative_field_referral_code(create_account_page):
 @pytest.mark.negative
 def test_with_empty_fields(create_account_page):
     create_account_page.open()
-    create_account_page.create_account()
     create_account_page.select_checkbox()
     create_account_page.press_next()
     create_account_page.check_with_empty_fields('Поле не заполнено')

@@ -6,9 +6,6 @@ from playwright.sync_api import expect
 
 class CreateAccount(BasePage):
 
-    def create_account(self):
-        create = self.page.locator(loc.create_loc)
-        create.click()
 
     def field_incorrect_user_name(self, text):
         field = self.page.get_by_label(loc.field_loc)
@@ -89,4 +86,28 @@ class CreateAccount(BasePage):
         press_next.click()
 
     def check_with_empty_fields(self, text):
-        expect(self.page.get_by_text(loc.empty_fields_loc)).to_contain_text(text)
+        elements = self.page.get_by_text(loc.empty_fields_loc)
+        assert elements.count() == 3
+        for i in range(elements.count()):
+            element = elements.nth(i)
+            assert element.is_visible()
+            assert element.inner_text() == text
+
+
+
+
+#
+#
+#
+# elements = page.locator(LOCATOR)
+#
+# # Проверяем, что найдено ровно три элемента
+# assert elements.count() == 3, "Ожидалось 3 элемента, но найдено другое количество."
+#
+# # Проверка каждого элемента
+# for i in range(elements.count()):
+#     # Получаем i-й элемент и выполняем проверки
+#     element = elements.nth(i)
+#     assert element.is_visible(), f"Элемент {i + 1} не отображается"
+#     assert element.inner_text() == "Ожидаемый текст", f"Текст элемента {i + 1} не совпадает"
+# ement.text == "Ожидаемый текст", "Текст элемента не совпадает"
