@@ -20,15 +20,14 @@ def test_negative_field_incorrect_user_name(create_account_page):
     create_account_page.check_user_name_error_message('Введены недопустимые символы')
 
 
-
-
-
-
 @allure.step('Поле "Электронная почта"')
 @pytest.mark.negative
 def test_negative_field_incorrect_email(create_account_page):
     error_message_data = 'Формат e-mail: username@test.ru'
     create_account_page.open()
+    create_account_page.field_incorrect_email('v@имейл.ру')
+    create_account_page.check_email_error_message(error_message_data)
+    create_account_page.clear_field_email()
     create_account_page.field_incorrect_email('email.ru')
     create_account_page.check_email_error_message(error_message_data)
     create_account_page.clear_field_email()
@@ -55,6 +54,12 @@ def test_negative_field_incorrect_password(create_account_page):
     create_account_page.check_password_error_message_min('Пароль должен содержать минимум 8 символов')
     create_account_page.clear_field_password()
     create_account_page.field_incorrect_password(password_data)
+    create_account_page.check_password_error_message_max('Пароль должен содержать от 8 до 64 символов,'
+                                                         ' включая заглавные буквы и цифры')
+    create_account_page.clear_field_password()
+    create_account_page.field_incorrect_password('Влад1234567')
+    create_account_page.select_checkbox()
+    create_account_page.press_next()
     create_account_page.check_password_error_message_max('Пароль должен содержать от 8 до 64 символов,'
                                                          ' включая заглавные буквы и цифры')
 
