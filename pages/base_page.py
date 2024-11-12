@@ -3,7 +3,7 @@ import allure
 
 
 class BasePage:
-    base_url = 'https://koshelek.ru/authorization/signup'
+    base_url = 'https://koshelek.ru'
     page_url = None
 
     def __init__(self, page: Page):
@@ -11,4 +11,4 @@ class BasePage:
 
     @allure.step('open page')
     def open(self):
-        self.page.goto(f'{self.base_url}')
+        self.page.goto(f'{self.base_url}{self.page_url}')

@@ -84,3 +84,13 @@ def test_with_empty_fields(create_account_page):
     create_account_page.select_checkbox()
     create_account_page.press_next()
     create_account_page.check_with_empty_fields('Поле не заполнено')
+
+
+@allure.step("Регистрация с уже существующими данными")
+@pytest.mark.negative
+def test_with_empty_fields(create_account_page):
+    create_account_page.open()
+    create_account_page.field_incorrect_user_name('test_user11')
+    create_account_page.field_incorrect_email(' ')
+    create_account_page.check_user_nam_error_message('Имя пользователя уже занято')
+    create_account_page.clear_field_user_name()
