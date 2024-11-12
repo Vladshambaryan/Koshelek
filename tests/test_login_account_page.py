@@ -28,7 +28,7 @@ def test_negative_field_incorrect_email(login_account_page):
     login_account_page.check_email_error_message(error_message_data)
 
 
-@allure.step('Поле "Пароль"')
+@allure.step('Проверка сообщения Пароль должен содержать не менее 8 символов')
 @pytest.mark.negative
 def test_negative_field_incorrect_password(login_account_page):
     login_account_page.open()
@@ -36,7 +36,7 @@ def test_negative_field_incorrect_password(login_account_page):
     login_account_page.check_password_error_message('Пароль должен содержать не менее 8 символов')
 
 
-@allure.step("Не заполненные поля")
+@allure.step("Проверка сообщения Поле не заполнено")
 @pytest.mark.negative
 def test_with_empty_fields(login_account_page):
     login_account_page.open()
