@@ -88,7 +88,7 @@ def test_with_empty_fields(create_account_page):
 
 @allure.step("Регистрация с уже существующими данными")
 @pytest.mark.negative
-def test_with_empty_fields(create_account_page):
+def test_registration_with_existing_data(create_account_page):
     create_account_page.open()
     create_account_page.field_incorrect_user_name('test_user11')
     create_account_page.field_incorrect_email(' ')
