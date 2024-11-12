@@ -4,7 +4,7 @@ import allure
 from conftest import login_account_page
 
 
-@allure.step('Поле "Электронная почта"')
+@allure.step('Проверка сообщения поле "Электронная почта"')
 @pytest.mark.negative
 def test_negative_field_incorrect_email(login_account_page):
     error_message_data = 'Формат e-mail: username@test.ru'
