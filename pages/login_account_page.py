@@ -62,7 +62,7 @@ class LoginAccount(BasePage):
 
 
     def press_in(self):
-        press_next = self.page.get_by_text(loc.in_loc)
+        press_next = self.page.get_by_role("button", name="Войти")
         press_next.click()
 
     def check_with_empty_fields(self, text):

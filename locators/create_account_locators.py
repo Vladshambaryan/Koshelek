@@ -23,7 +23,7 @@ referral_code_message_loc = 'Неверный формат ссылки'
 checkbox_loc = "checkbox"
 next_loc = 'Далее'
 empty_fields_loc = 'Поле не заполнено'
-in_loc = 'Войти'
+in_loc = "Войти"
 
 messag_error_loc = 'Имя пользователя уже занято'
 
