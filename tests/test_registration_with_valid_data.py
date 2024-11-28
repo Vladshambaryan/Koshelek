@@ -1,15 +1,3 @@
-from playwright.sync_api import BrowserContext
-import pytest
-
-
-@pytest.fixture()
-def page(context: BrowserContext, playwright):
-    playwright.selectors.set_test_id_attribute("id")
-    playwright.chromium.launch(headless=True)
-    page = context.new_page()
-    page.set_viewport_size({'width': 1700, 'height': 980})
-    return page
-
 
 def test_registration_with_valid_data(page):
     page.goto('https://koshelek.ru/authorization/signup')

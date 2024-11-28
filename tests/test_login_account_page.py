@@ -1,6 +1,5 @@
 import pytest
 import allure
-
 from conftest import login_account_page
 
 

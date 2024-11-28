@@ -1,5 +1,6 @@
 import pytest
 import allure
+#  pytest --browser=firefox --browser=chromium
 
 
 @allure.step('Проверка сообщения поле Имя пользователя')
