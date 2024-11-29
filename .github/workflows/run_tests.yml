@@ -10,6 +10,7 @@ on:
         default: smoke
         options:
           - negative
+          - all tests
 
           
 permissions:
