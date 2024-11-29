@@ -37,7 +37,7 @@ jobs:
         
       - name: run all tests
         if: "github.event.inputs.deployment_target == 'all tests'"
-        run: pytest --browser webkit --alluredir=allure-results
+        run: pytest --browser=firefox --browser=chromium --alluredir=allure-results
         continue-on-error: true
         
       - name: run smoke tests
