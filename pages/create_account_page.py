@@ -1,4 +1,3 @@
-
 from locators import create_account_locators as loc
 from pages.base_page import BasePage
 from playwright.sync_api import expect
@@ -33,6 +32,11 @@ class CreateAccount(BasePage):
         expect(self.page.get_by_text(loc.mess_error_loc)).to_contain_text(text)
 
 
+    def field_incorrect_click(self, text):
+        field = self.page.get_by_label(loc.email_loc)
+        field.press_sequentially(text)
+        field.click()
+
     def field_incorrect_email(self, text):
         field = self.page.get_by_label(loc.email_loc)
         field.press_sequentially(text)
@@ -46,7 +50,6 @@ class CreateAccount(BasePage):
 
     def check_email_error_message(self, text):
         expect(self.page.get_by_text(loc.email_error_loc)).to_have_text(text)
-
 
     def field_incorrect_password(self, text):
         field = self.page.get_by_label(loc.password_loc)
